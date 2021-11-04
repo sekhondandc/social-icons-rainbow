@@ -1,0 +1,157 @@
+:root{
+	--gry:#292929;
+	--wht:#ffffff;
+	--blk:#000000;
+	--fa_a:#3B5998; 
+	--fa_b:#FFFFFF;
+	--tw_a:#66757F;
+	--tw_b:#00ACEE;
+	--tw_c:#36D8FF;
+	--tw_d:#F5F8FA;
+	--in_a:#405DE6;
+	--in_b:#5851DB;
+	--in_c:#833AB4;
+	--in_d:#C13584;
+	--in_e:#E1306C;
+	--in_f:#FD1D1D;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gry);
+}
+.social-icons .icon{
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: 0.1s linear;
+}
+.social-icons .icon::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border: 5px solid rgba(255,255,255,1);
+    transition: 0.1s linear;
+}
+.social-icons .icon:hover::before{
+    border-color: rgba(255,255,255,0.1);
+}
+.social-icons .icon *{
+    font-size: 30px;
+    color: var(--wht);
+    font-weight: bold;
+}
+.social-icons .icon span{
+    position: absolute;
+}
+.social-icons .icon:hover span:nth-child(2){
+    width: 100%;
+    height: 5px;
+    top: 0;
+    left: -100%;
+    animation: animate_top 1s linear infinite;
+}
+@keyframes animate_top {
+    0%{
+        left: -100%;
+    }
+    50%,
+    100%{
+        left: 100%;
+    }
+}
+.social-icons .icon:hover span:nth-child(3){
+    width: 5px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+    animation: animate_right 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate_right {
+    0%{
+        top: -100%;
+    }
+    50%,
+    100%{
+        top: 100%;
+    }
+}
+
+.social-icons .icon:hover span:nth-child(4){
+    width: 100%;
+    height: 5px;
+    bottom: 0;
+    right: -100%;
+    animation: animate_bottom 1s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes animate_bottom {
+    0%{
+        right: -100%;
+    }
+    50%,
+    100%{
+        right: 100%;
+    }
+}
+
+.social-icons .icon:hover span:nth-child(5){
+    width: 5px;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+    animation: animate_left 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate_left {
+    0%{
+        bottom: -100%;
+    }
+    50%,
+    100%{
+        bottom: 100%;
+    }
+}
+.social-icons .icon.facebook:hover *{
+    background: linear-gradient(120deg, var(--fa_a), var(--fa_b));
+    color: transparent;
+    -webkit-background-clip: text;
+}
+.social-icons .icon.facebook:hover span{
+    background: linear-gradient(120deg, var(--fa_a), var(--fa_b));
+}
+.social-icons .icon.twitter:hover *{
+    background: linear-gradient(45deg, var(--tw_a), var(--tw_b), var(--tw_c), var(--tw_d));
+    color: transparent;
+    -webkit-background-clip: text;
+}
+.social-icons .icon.twitter:hover span{
+    background: linear-gradient(45deg, var(--tw_a), var(--tw_b), var(--tw_c), var(--tw_d));
+}
+.social-icons .icon.instagram:hover *{
+    background: linear-gradient(45deg, var(--in_a), var(--in_b), var(--in_c), var(--in_d), var(--in_e), var(--in_f));
+    color: transparent;
+    -webkit-background-clip: text;
+}
+.social-icons .icon.instagram:hover span{
+    background: linear-gradient(45deg, var(--in_a), var(--in_b), var(--in_c), var(--in_d), var(--in_e), var(--in_f));
+}
